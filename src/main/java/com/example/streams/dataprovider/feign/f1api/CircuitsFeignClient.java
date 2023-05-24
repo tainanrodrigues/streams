@@ -1,14 +1,16 @@
 package com.example.streams.dataprovider.feign.f1api;
 
-import com.example.streams.dataprovider.feign.f1api.dto.CircuitsDTO;
+import com.example.streams.dataprovider.feign.f1api.dto.CircuitsResponseDTO;
 import feign.Headers;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "circuits", url = "${streams.host}")
-@Headers("X-RapidAPI-Key: bdd1073c04msh1236a71bbdbf533p1f67a7jsn69d7211189bc")
+@FeignClient(value = "circuits", url = "https://api-formula-1.p.rapidapi.com")
+@Headers("X-RapidAPI-Host: api-formula-1.p.rapidapi.com")
 public interface CircuitsFeignClient {
 
-    @GetMapping("/circuits")
-    CircuitsDTO getCircuits();
+    @RequestMapping(method = RequestMethod.GET, value = "/circuits")
+    CircuitsResponseDTO getCircuits(@RequestHeader("X-RapidAPI-Key") String key);
 }

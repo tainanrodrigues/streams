@@ -1,7 +1,7 @@
 package com.example.streams.entrypoint.api.controller.impl;
 
 import com.example.streams.core.usecase.GetAllCircuitsUseCase;
-import com.example.streams.dataprovider.feign.f1api.dto.CircuitsDTO;
+import com.example.streams.dataprovider.feign.f1api.dto.CircuitsResponseDTO;
 import com.example.streams.entrypoint.api.controller.CircuitsController;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +19,7 @@ public class CircuitsControllerImpl implements CircuitsController {
 
     @Override
     @GetMapping
-    public CircuitsDTO getCircuits() {
+    public CircuitsResponseDTO getCircuits() {
         return getAllCircuitsUseCase.execute();
     }
 }
