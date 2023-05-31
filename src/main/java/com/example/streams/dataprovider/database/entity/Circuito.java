@@ -1,16 +1,14 @@
 package com.example.streams.dataprovider.database.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
-@Builder
+@Data
 @RequiredArgsConstructor
 @Entity
+@Table(name = "circuito")
 public class Circuito {
 
     @Id
@@ -19,13 +17,17 @@ public class Circuito {
     private String imagem;
 
     @OneToOne
+    @JoinColumn(name = "competicao_id")
     private Competicao competicao;
+
     private Long voltas;
     private String distanciaVolta;
     private Long capacidade;
     private Long inauguracao;
     private Long primeiraCorrida;
     private String distanciaTotal;
+
     @OneToOne
+    @JoinColumn(name = "volta_recorde_id")
     private VoltaRecorde voltaRecorde;
 }

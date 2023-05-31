@@ -2,3 +2,15 @@ streams:
   host: https://api-formula-1.p.rapidapi.com
   rapidapikey: bdd1073c04msh1236a71bbdbf533p1f67a7jsn69d7211189bc
   rapidapihost: api-formula-1.p.rapidapi.com
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/streams?createDatabaseIfNotExist=true
+    username: root
+    password: Drojh_KJMrP!@d2J
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true

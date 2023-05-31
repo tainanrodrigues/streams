@@ -1,17 +1,15 @@
 package com.example.streams.dataprovider.database.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Getter
-@Builder
 @RequiredArgsConstructor
 @Entity
+@Data
+@Table(name = "volta_recorde")
 public class VoltaRecorde {
 
     @Id
