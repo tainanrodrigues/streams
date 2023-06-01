@@ -10,11 +10,10 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class PopulateCircuitsUseCase implements UseCase<CircuitsResponseDTO> {
+public class PopulateCircuitsUseCase {
 
     private final PopulateCircuitsGateway populateCircuitsGateway;
 
-    @Override
     public void execute() {
         populateCircuitsGateway.execute();
     }
