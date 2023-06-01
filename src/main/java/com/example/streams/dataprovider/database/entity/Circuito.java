@@ -21,11 +21,11 @@ public class Circuito {
     @JoinColumn(name = "competicao_id")
     private Competicao competicao;
 
+    private Long primeiraCorrida;
     private Long voltas;
     private String distanciaVolta;
     private Long capacidade;
     private Long inauguracao;
-    private Long primeiraCorrida;
     private String distanciaTotal;
 
     @OneToOne
