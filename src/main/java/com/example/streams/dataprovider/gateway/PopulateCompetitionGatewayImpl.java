@@ -1,6 +1,7 @@
 package com.example.streams.dataprovider.gateway;
 
 import com.example.streams.core.gateway.PopulateCircuitsGateway;
+import com.example.streams.core.gateway.PopulateCompetitionGateway;
 import com.example.streams.dataprovider.database.repository.CompetitionRepository;
 import com.example.streams.dataprovider.feign.f1api.CompetitionFeignClient;
 import com.example.streams.dataprovider.feign.f1api.dto.CompetitionResponseDTO;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class PopulateCompetitionGatewayImpl implements PopulateCircuitsGateway {
+public class PopulateCompetitionGatewayImpl implements PopulateCompetitionGateway {
 
     private final CompetitionFeignClient competitionFeignClient;
     private final CompetitionMapper competitionMapper;
