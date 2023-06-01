@@ -1,6 +1,6 @@
 package com.example.streams.core.gateway;
 
-public interface PopulateCircuitsGateway {
+public interface PopulateCompetitionGateway {
 
     void execute();
 }

@@ -15,7 +15,7 @@ public class PopulateCircuitsUseCase implements UseCase<CircuitsResponseDTO> {
     private final PopulateCircuitsGateway populateCircuitsGateway;
 
     @Override
-    public CircuitsResponseDTO execute() {
-        return populateCircuitsGateway.execute();
+    public void execute() {
+        populateCircuitsGateway.execute();
     }
 }

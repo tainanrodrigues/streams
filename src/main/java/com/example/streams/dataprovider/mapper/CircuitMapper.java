@@ -10,6 +10,7 @@ public interface CircuitMapper {
 
     @Mapping(target = "nome", source = "name")
     @Mapping(target = "imagem", source = "image")
+    @Mapping(target = "competicao", source = "competition")
     @Mapping(target = "primeiraCorrida", source = "firstGrandPrix")
     @Mapping(target = "voltas", source = "laps")
     @Mapping(target = "distanciaVolta", source = "length")
