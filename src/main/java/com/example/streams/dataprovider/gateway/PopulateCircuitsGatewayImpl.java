@@ -1,6 +1,6 @@
 package com.example.streams.dataprovider.gateway;
 
-import com.example.streams.core.gateway.GetAllCircuitsGateway;
+import com.example.streams.core.gateway.PopulateCircuitsGateway;
 import com.example.streams.dataprovider.database.entity.Circuito;
 import com.example.streams.dataprovider.feign.f1api.CircuitsFeignClient;
 import com.example.streams.dataprovider.feign.f1api.dto.CircuitsResponseDTO;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class GetAllCircuitsGatewayImpl implements GetAllCircuitsGateway {
+public class PopulateCircuitsGatewayImpl implements PopulateCircuitsGateway {
 
 
     private final CircuitsFeignClient circuitsFeignClient;
