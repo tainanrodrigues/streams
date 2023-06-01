@@ -1,5 +1,7 @@
 package com.example.streams.dataprovider.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,7 +30,8 @@ public class Circuito {
     private Long inauguracao;
     private String distanciaTotal;
 
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "volta_recorde_id")
+    @JsonManagedReference
     private VoltaRecorde voltaRecorde;
 }

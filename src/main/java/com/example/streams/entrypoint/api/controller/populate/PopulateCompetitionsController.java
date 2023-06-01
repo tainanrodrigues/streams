@@ -1,4 +1,4 @@
-package com.example.streams.entrypoint.api.controller;
+package com.example.streams.entrypoint.api.controller.populate;
 
 public interface PopulateCompetitionsController {
 

@@ -17,7 +17,9 @@ public interface CircuitMapper {
     @Mapping(target = "capacidade", source = "capacity")
     @Mapping(target = "inauguracao", source = "opened")
     @Mapping(target = "distanciaTotal", source = "raceDistance")
-    @Mapping(target = "voltaRecorde", source = "lapRecord")
+    @Mapping(target = "voltaRecorde.ano", source = "lapRecord.year")
+    @Mapping(target = "voltaRecorde.piloto", source = "lapRecord.driver")
+    @Mapping(target = "voltaRecorde.tempo", source = "lapRecord.time")
     Circuito toEntity(CircuitsDTO circuitsResponseDTO);
 
 }

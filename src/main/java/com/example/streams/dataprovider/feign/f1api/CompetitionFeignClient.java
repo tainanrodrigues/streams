@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "circuits", url = "https://api-formula-1.p.rapidapi.com")
+@FeignClient(value = "com.example.streams.dataprovider.feign.f1api.competition", url = "https://api-formula-1.p.rapidapi.com")
 @Headers("X-RapidAPI-Host: api-formula-1.p.rapidapi.com")
 public interface CompetitionFeignClient {
 

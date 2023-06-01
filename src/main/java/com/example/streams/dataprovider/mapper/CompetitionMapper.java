@@ -11,7 +11,8 @@ import org.mapstruct.Mapping;
 public interface CompetitionMapper {
 
     @Mapping(target = "nome", source = "name")
-    @Mapping(target = "localizacao", source = "location")
+    @Mapping(target = "localizacao.pais", source = "location.country")
+    @Mapping(target = "localizacao.cidade", source = "location.city")
     Competicao toEntity(CompetitionDTO competitionDTO);
 
 }

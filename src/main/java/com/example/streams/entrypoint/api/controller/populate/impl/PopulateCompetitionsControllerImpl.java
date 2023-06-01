@@ -1,9 +1,7 @@
-package com.example.streams.entrypoint.api.controller.impl;
+package com.example.streams.entrypoint.api.controller.populate.impl;
 
-import com.example.streams.core.usecase.PopulateCircuitsUseCase;
 import com.example.streams.core.usecase.PopulateCompetitionsUseCase;
-import com.example.streams.entrypoint.api.controller.PopulateCircuitsController;
-import com.example.streams.entrypoint.api.controller.PopulateCompetitionsController;
+import com.example.streams.entrypoint.api.controller.populate.PopulateCompetitionsController;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
