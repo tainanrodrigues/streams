@@ -1,6 +1,8 @@
 package com.example.streams.dataprovider.database.entity;
 
-import lombok.*;
+import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

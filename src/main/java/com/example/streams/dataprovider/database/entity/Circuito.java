@@ -5,8 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 
 @Getter
-@Data
+@Builder
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "circuito")
 public class Circuito {
