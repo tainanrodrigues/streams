@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/populate/circuits")
+@RequestMapping("/populate/teams")
 @RequiredArgsConstructor
 public class PopulateTeamsControllerImpl implements PopulateTeamsController {
 

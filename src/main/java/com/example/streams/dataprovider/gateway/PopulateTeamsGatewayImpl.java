@@ -1,11 +1,12 @@
 package com.example.streams.dataprovider.gateway;
 
-import com.example.streams.core.gateway.PopulateCircuitsGateway;
 import com.example.streams.core.gateway.PopulateTeamsGateway;
 import com.example.streams.dataprovider.database.repository.CircuitoRepository;
-import com.example.streams.dataprovider.feign.f1api.CircuitsFeignClient;
-import com.example.streams.dataprovider.feign.f1api.dto.CircuitsResponseDTO;
+import com.example.streams.dataprovider.database.repository.EquipeRepository;
+import com.example.streams.dataprovider.feign.f1api.TeamsFeignClient;
+import com.example.streams.dataprovider.feign.f1api.dto.TeamsResponseDTO;
 import com.example.streams.dataprovider.mapper.CircuitMapper;
+import com.example.streams.dataprovider.mapper.TeamMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -16,15 +17,15 @@ import org.springframework.stereotype.Component;
 public class PopulateTeamsGatewayImpl implements PopulateTeamsGateway {
 
 
-    private final CircuitsFeignClient circuitsFeignClient;
-    private final CircuitMapper circuitMapper;
-    private final CircuitoRepository circuitoRepository;
+    private final TeamsFeignClient teamsFeignClient;
+    private final TeamMapper teamMapper;
+    private final EquipeRepository equipeRepository;
 
     @Override
     public void execute() {
-        final CircuitsResponseDTO circuitsResponseDTO = circuitsFeignClient.getCircuits("bdd1073c04msh1236a71bbdbf533p1f67a7jsn69d7211189bc");
+        final TeamsResponseDTO teamsResponseDTO = teamsFeignClient.getTeams("bdd1073c04msh1236a71bbdbf533p1f67a7jsn69d7211189bc");
 
-        circuitsResponseDTO.getResponse()
-                .forEach(circuitsDTO -> circuitoRepository.save(circuitMapper.toEntity(circuitsDTO)));
+        teamsResponseDTO.getResponse()
+                .forEach(teamsDTO -> equipeRepository.save(teamMapper.toEntity(teamsDTO)));
     }
 }
