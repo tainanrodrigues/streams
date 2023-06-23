@@ -1,12 +1,11 @@
 package com.example.streams.dataprovider.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Data
@@ -16,8 +15,14 @@ import javax.persistence.Table;
 public class MelhorPosicao {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Long posicao;
     private Long numero;
+
+    @OneToOne(mappedBy = "melhorPosicao")
+    @JsonBackReference
+    private Equipe equipe;
 
 }

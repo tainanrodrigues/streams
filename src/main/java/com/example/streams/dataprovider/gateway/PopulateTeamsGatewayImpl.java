@@ -26,6 +26,10 @@ public class PopulateTeamsGatewayImpl implements PopulateTeamsGateway {
         final TeamsResponseDTO teamsResponseDTO = teamsFeignClient.getTeams("bdd1073c04msh1236a71bbdbf533p1f67a7jsn69d7211189bc");
 
         teamsResponseDTO.getResponse()
-                .forEach(teamsDTO -> equipeRepository.save(teamMapper.toEntity(teamsDTO)));
+                .forEach(
+                        teamsDTO -> {
+                            var entity = teamMapper.toEntity(teamsDTO);
+                            equipeRepository.save(entity);
+                        });
     }
 }

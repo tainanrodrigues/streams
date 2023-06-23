@@ -1,14 +1,12 @@
 package com.example.streams.dataprovider.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Builder
@@ -26,8 +24,11 @@ public class Equipe {
     private Long anoEstreia;
     private Long titulos;
 
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "melhor_posicao_id")
+    @JsonManagedReference
     private MelhorPosicao melhorPosicao;
+
     private Long primeirosLugares;
     private Long voltasMaisRapidas;
     private String presidente;
