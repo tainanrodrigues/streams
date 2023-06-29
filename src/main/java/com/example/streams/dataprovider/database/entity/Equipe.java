@@ -1,6 +1,7 @@
 package com.example.streams.dataprovider.database.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -33,6 +34,8 @@ public class Equipe {
     private Long voltasMaisRapidas;
     private String presidente;
     private String diretor;
+
+    @JsonProperty("administrador_tecnico")
     private String administradorTecnico;
     private String chassi;
     private String motor;
